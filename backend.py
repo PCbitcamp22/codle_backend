@@ -3,10 +3,6 @@
 # Takes in a string from front end and runs it with exec
 # Need to account for malicious input 
 
-def execInput(self, f: str):
-    self.f = f
-    exec(f, globals)
-
 
 # Each question has 6 test function parameters as functions
 # There will be ONE question for each day.
@@ -54,8 +50,8 @@ class question():
                 
         return outputList
 
-    def getResults(self, inputString: str):
-        execInput(inputString)
+    def getResultsWithInput(self, inputString: str):
+        exec(inputString, globals)
         self.correctList = [1, 2, 3, 4, 5, 6]
         outputList = ["", 2, 3, 4 ,5, 6]
         for i in range(len(self.correctOutput)):
