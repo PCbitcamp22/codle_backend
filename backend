@@ -1,1 +1,30 @@
 #Test
+
+from tkinter.messagebox import QUESTION
+
+
+def execInput(self, f):
+    self.f = f
+    exec(f)
+
+def handleInput(self, f):
+    self.f = f
+    list = ["1", "2", "3", "4", "5", "6"]
+
+
+class question():
+    def __init__(self, text: str, correctOutput: list):
+        self.text = text
+        self.correctOutput = correctOutput
+
+    def getText(self):
+        return self.text
+
+    def getCorrectOutput(self):
+        print(self.getCorrectOutput())
+
+    def testOutput(self, f: func):
+        list = []
+        for i in range(len(correctOutput)):
+            
+
