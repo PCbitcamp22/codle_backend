@@ -38,7 +38,6 @@ class question():
 
     #Unlike testOutput, this function returns a tuple with whether or not the tests were successful
     def getResults(self):
-        self.correctList = [1, 2, 3, 4, 5, 6]
         outputList = ["", 2, 3, 4 ,5, 6]
         for i in range(len(self.correctOutput)):
             try:
@@ -51,7 +50,8 @@ class question():
         return outputList
 
     def getResultsWithInput(self, inputString: str):
-        exec(inputString, globals)
+        
+        exec(inputString, globals())
         self.correctList = [1, 2, 3, 4, 5, 6]
         outputList = ["", 2, 3, 4 ,5, 6]
         for i in range(len(self.correctOutput)):
@@ -73,10 +73,10 @@ class question():
 def fun1():
     return 5
 
-def fun2():
-    return dog()
+# def fun2():
+ #   return dog()
 
-questionTest = question("What's 5?", [5, 5, 5, 5, 5, 5], fun1, fun1, fun1, fun1, fun1, fun2)
+questionTest = question("What's 5?", [5, 5, 5, 5, 5, 5], fun1, fun1, fun1, fun1, fun1, fun1)
 
 questionTest.testOutput()
 output = questionTest.getOutputList()
