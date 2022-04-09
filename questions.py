@@ -25,23 +25,10 @@ sample_string = """def addNums(num1, num2):
     return num1 + num2"""
 
 exec(sample_string, globals())
-print(q1.getResultsWithInput(sample_string))
+#print(q1.getResultsWithInput(sample_string))
 
 
 
-def fun1():
-    return 5
-
-def fun2():
-   return giveNum()
-
-questionTest = question("What's 5?", [5, 5, 5, 5, 5, 5], fun1, fun1, fun1, fun1, fun1, fun2)
-
-
-exec("""def giveNum():
-    return 8""", globals())
-print(questionTest.getResultsWithInput("""def giveNum():
-    return 8"""))
 
 questionList = {"04/09/2022" : q1}
 questionList["04/10/2022"] = q1
