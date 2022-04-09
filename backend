@@ -1,6 +1,5 @@
 #Test
 
-from tkinter.messagebox import QUESTION
 
 
 def execInput(self, f):
