@@ -1,18 +1,13 @@
-#Test
+#Takes in a string from front end and runs it with exec
 
-
-
-def execInput(self, f):
+def execInput(self, f: str):
     self.f = f
     exec(f)
 
-def handleInput(self, f):
-    self.f = f
-    list = ["1", "2", "3", "4", "5", "6"]
 
-
+# Each question has 6 test function parameters 
 class question():
-    def __init__(self, text: str, correctOutput: list):
+    def __init__(self, text: str, correctOutput: list, fun1, fun2, fun3, fun4, fun5, fun6):
         self.text = text
         self.correctOutput = correctOutput
 
@@ -25,5 +20,9 @@ class question():
     def testOutput(self, f: func):
         list = []
         for i in range(len(correctOutput)):
-            
+
+
+
+# test function for each 
+def q1_test1():
 
