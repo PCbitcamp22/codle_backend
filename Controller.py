@@ -33,7 +33,7 @@ def getTodayProblem():
 def getResults():
     date_time = date.today().strftime("%m/%d/%Y")
     questionOfTheDay = backend.questionList[date_time]
-    return jsonify(questionOfTheDay.getResultsWithInput(request.get_json().body))
+    return jsonify(questionOfTheDay.getResultsWithInput(request.body))
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
