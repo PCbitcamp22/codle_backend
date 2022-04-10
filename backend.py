@@ -48,10 +48,10 @@ class question():
     #    return outputList
 
     def getResultsWithInput(self, inputString: str):
-        outputList = {1:-2, 2: -2, 3: -2, 4: -2, 5: -2}
+        outputList = {0:-2, 1:-2, 2: -2, 3: -2, 4: -2}
         if "import " in inputString:
             print("PLEASE DO NOT ATTEMPT IMPORTS")
-            return {1:-3, 2: -3, 3: -3, 4: -3, 5: -3}
+            return {0:-3, 1: -3, 2: -3, 3: -3, 4: -3}
 
         try:
             exec(inputString, globals())
@@ -59,7 +59,7 @@ class question():
         except:
             #catch exception
             print("failure during function definition")
-            outputList = {1:-3, 2: -3, 3: -3, 4: -3, 5: -3}       #3's mean failed during function definition
+            outputList = {0:-3, 1: -3, 2: -3, 3: -3, 4: -3}       #3's mean failed during function definition
             return outputList
            
         
@@ -67,13 +67,13 @@ class question():
             try:
                 exec(inputString, globals())
                 if (self.correctOutput[i] == self.tests[i]()):
-                    outputList[0 + i] = 1 #1 is correct case
+                    outputList[i] = 1 #1 is correct case
                 else: 
-                    outputList[0 +i] = 0 #0 is incorrect case
+                    outputList[i] = 0 #0 is incorrect case
             except Exception as e:
                 #catch exception
                 print("fail")
-                outputList[i + 1] = -1 #-1 means throws error
+                outputList[i] = -1 #-1 means throws error
                 print(e)
                 
         return outputList
@@ -91,7 +91,7 @@ class question():
 #    return 8"""))
 
     
-#Question 1 below
+
 def q1_t1():
     return add_nums(0, 0)
 
@@ -117,7 +117,6 @@ q1 = question("Sometimes, you just need to add two numbers. Write a function add
 #exec(sample_string, globals())
 #print(q1.getResultsWithInput(sample_string))
 
-# Question 2 below
 def q2_t1():
     return generate_lucas_sequence(0)
 
@@ -137,9 +136,9 @@ def q2_t5():
 
 q2 = question("""The Lucas Number sequence is defined as follows:\nL(n) = 2 for n = 0, L(n) = 1 for n = 1, and L(n) = L(n-1) + L(n-2) for n > 1\n 
 Write a function generate_lucas_sequence(param_1) that takes an int parameter to compute the value of L(n) given any n between 0 and 25""",
-[2, 1, 3, 1364, 640], q2_t1, q2_t2, q2_t3, q2_t4, q2_t5)
+[2, 1, 3, 1364, 64079], q2_t1, q2_t2, q2_t3, q2_t4, q2_t5)
 
-# Question 3 below
+
 def q3_t1():
     return repeating_substr("abababab")
 
@@ -162,7 +161,7 @@ An empty string should be returned when there is no repeating substring.""",
 ["abab", "", "   ", "momdad", "?!_"], q3_t1, q3_t2, q3_t3, q3_t4, q3_t5)
  
 
-# Question 4 below
+
 def q4_t1():
     return caesar_shift("abc", 1)
 
@@ -185,7 +184,7 @@ that takes a string parameter and encodes it using a Caesar shift with a shift o
 Non-alphabetic characters should not be changed, and it can be assumed all text is lowercase. Additionally, all shifts will be positive""",
 ["bcd", "itjx ymnx btwp?", "abc", " ?a! ", "Qyfwigy ni Vcnwugj!"], q4_t1, q4_t2, q4_t3, q4_t4, q4_t5)
 
-# Question 5 below
+
 def q5_t1():
     return to_hex(1)
 
