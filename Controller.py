@@ -11,18 +11,12 @@ app = Flask(__name__)
 CORS(app)
 
 
-#We get today's date
-
-#date_time = date.today().strftime("%m/%d/%Y")
-#questionOfTheDay = backend.questionList[date_time]
-
-
 # send them question
 #questionTextToSend = questionOfTheDay.getText()
-@app.route('/problem')
-def getTodayProblem():
+@app.route('/problem/<number>')
+def getTodayProblem(number):
     date_time = date.today().strftime("%m/%d/%Y")
-    questionOfTheDay = backend.questionList[date_time]
+    questionOfTheDay = backend.questionList[number]
     questionTextToSend = questionOfTheDay.getText()
     return jsonify(questionTextToSend)
 
@@ -39,7 +33,7 @@ def getResults():
 
         print(req)
         date_time = date.today().strftime("%m/%d/%Y")
-        questionOfTheDay = backend.questionList[date_time]
+        questionOfTheDay = backend.questionList[str(req["Number"])]
         return jsonify(questionOfTheDay.getResultsWithInput(req["Code-Text"]))
     else:
         return(jsonify({"sfasf":"test"}))
