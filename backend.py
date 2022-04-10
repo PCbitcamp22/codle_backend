@@ -107,7 +107,7 @@ def q1_t4():
 def q1_t5():
     return add_nums(95, 99)
 
-q1 = question("Sometimes, you just need to add two numbers. Write a function add_nums(param_1, param_2) that takes two int parameters.",
+q1 = question("Sometimes, you just need to add two numbers. Write a function add_nums(num1, num2) that takes two int parameters and returns their sum.",
 [0, 15, -95, 135, 194], q1_t1, q1_t2, q1_t3, q1_t4, q1_t5)
 
 
