@@ -9,8 +9,7 @@
 
 
 
-from calendar import c
-
+# from calendar import c
 
 class question():
     def __init__(self, text: str, correctOutput: list, sampleAnswer: str, fun1, fun2, fun3, fun4, fun5):
@@ -172,7 +171,7 @@ def q3_t5():
     return repeating_substr("?!_?!_gqinfowmo")
 
 
-q3 = question("""Write the function repeating_substr(str) that takes a string parameter and returns the longest repeating substring. For example, the longest substring in the string "abababab" would be "abab". The longest substring in the string "ababa" would be "ab". An empty string should be returned when there is no repeating substring.""",
+q3 = question("""Write the function repeating_substr(str) that takes a string parameter and returns the longest repeating substring. For example, the longest substring in the string 'abababab' would be 'abab'. The longest substring in the string 'ababa' would be 'ab'. An empty string should be returned when there is no repeating substring.""",
 ["abab", "", "   ", "momdad", "?!_"], """def repeating_substr(str):
 
     n = len(str)
@@ -222,7 +221,7 @@ def q4_t5():
     return caesar_shift("Welcome to Bitcamp!", 1)
 
 
-q4 = question("""A Caesar cipher is a way to encrypt text. Caesar ciphers use a substitution method where the letters in the alphabet are shifted by a fixed number to provide encoding letters. For example, encoding "abc" with a Caesar shift of 1 would yield "bcd." Write a function caesar_shift(str, shift_num) that takes a string parameter and encodes it using a Caesar shift with a shift of size shift_num. The encrypted string should be returned. Non-alphabetic characters should not be changed, and it can be assumed all text is lowercase. Additionally, all shifts will be positive""",
+q4 = question("""A Caesar cipher is a way to encrypt text. Caesar ciphers use a substitution method where the letters in the alphabet are shifted by a fixed number to provide encoding letters. For example, encoding 'abc' with a Caesar shift of 1 would yield 'bcd.' Write a function caesar_shift(str, shift_num) that takes a string parameter and encodes it using a Caesar shift with a shift of size shift_num. The encrypted string should be returned. Non-alphabetic characters should not be changed, and it can be assumed all text is lowercase. Additionally, all shifts will be positive""",
 ["bcd", "itjx ymnx btwp?", "abc", " ?a! ", "Qyfwigy ni Vcnwugj!"], """""", q4_t1, q4_t2, q4_t3, q4_t4, q4_t5)
 
 
@@ -245,7 +244,7 @@ def q5_t5():
     return to_hex(0)
 
 
-q5 = question("""Write a function to_hex(num) that converts the parameter num to hexadecimal, and returns a string of the hexadecimal number. Note that num is in base 10. Example: converting 31 to hexadecimal would yield "1F".""",
+q5 = question("""Write a function to_hex(num) that converts the parameter num to hexadecimal, and returns a string of the hexadecimal number. Note that num is in base 10. Example: converting 31 to hexadecimal would yield '1F'.""",
 ["1", "1D", "100", "3B57", "0"], """conversions = {0: "0", 1: "1", 2: "2", 3: "3", 4: "4",
                     5: "5", 6: "6", 7: "7",
                     8: "8", 9: "9", 10: "A", 11: "B", 12: "C",
@@ -288,12 +287,12 @@ q6 = question("""Write a function is_coprime(num1, num2) that takes two integers
     return num1 == 1""", q6_t1, q6_t2, q6_t3, q6_t4, q6_t5)
 
 
-questionList = {"04/09/2022" : q1}
-questionList["04/10/2022"] = q2
-questionList["04/11/2022"] = q3
-questionList["04/12/2022"] = q4
-questionList["04/13/2022"] = q5
-questionList["04/14/2022"] = q6
+questionList = {"0" : q1}
+questionList["1"] = q2
+questionList["2"] = q3
+questionList["3"] = q4
+questionList["4"] = q5
+questionList["5"] = q6
 
 
 #print(questionList["04/12/2022"].getText())
