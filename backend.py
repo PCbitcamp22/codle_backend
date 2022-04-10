@@ -91,7 +91,7 @@ class question():
 #    return 8"""))
 
     
-
+#Question 1 below
 def q1_t1():
     return add_nums(0, 0)
 
@@ -117,6 +117,7 @@ q1 = question("Sometimes, you just need to add two numbers. Write a function add
 #exec(sample_string, globals())
 #print(q1.getResultsWithInput(sample_string))
 
+# Question 2 below
 def q2_t1():
     return generate_lucas_sequence(0)
 
@@ -138,7 +139,7 @@ q2 = question("""The Lucas Number sequence is defined as follows:\nL(n) = 2 for 
 Write a function generate_lucas_sequence(param_1) that takes an int parameter to compute the value of L(n) given any n between 0 and 25""",
 [2, 1, 3, 1364, 640], q2_t1, q2_t2, q2_t3, q2_t4, q2_t5)
 
-
+# Question 3 below
 def q3_t1():
     return repeating_substr("abababab")
 
@@ -161,7 +162,7 @@ An empty string should be returned when there is no repeating substring.""",
 ["abab", "", "   ", "momdad", "?!_"], q3_t1, q3_t2, q3_t3, q3_t4, q3_t5)
  
 
-
+# Question 4 below
 def q4_t1():
     return caesar_shift("abc", 1)
 
@@ -184,7 +185,7 @@ that takes a string parameter and encodes it using a Caesar shift with a shift o
 Non-alphabetic characters should not be changed, and it can be assumed all text is lowercase. Additionally, all shifts will be positive""",
 ["bcd", "itjx ymnx btwp?", "abc", " ?a! ", "Qyfwigy ni Vcnwugj!"], q4_t1, q4_t2, q4_t3, q4_t4, q4_t5)
 
-
+# Question 5 below
 def q5_t1():
     return to_hex(1)
 
@@ -204,6 +205,27 @@ def q5_t5():
 q5 = question("""Write a function to_hex(num) that converts the parameter num to hexadecimal, and returns a string of the hexadecimal number. Note that num is 
 in base 10. Example: converting 31 to hexadecimal would yield "1F".""",
 ["1", "1D", "100", "3B57", "0"], q5_t1, q5_t2, q5_t3, q5_t4, q5_t5)
+
+# Question 6 below
+def q6_t1():
+    return is_coprime(1,2)
+
+def q6_t2():
+    return is_coprime(15,8)
+
+def q6_t3():
+    return is_coprime(28, 36)
+
+def q6_t4():
+    return is_coprime(5,-12)
+
+def q6_t5():
+    return is_coprime(0, 10)
+
+q6 = question("""Write a function is_coprime(num1, num2) that takes two integers and checks that they are coprime. Two integers are 
+coprime if the only positive integer that is a divisor of both of them is 1. Return true if all the array elements are coprime and false 
+if not. For example, calling is_coprime(1,2) should return true. """,
+[True, True, False, True, False], q6_t1, q6_t2, q6_t3, q6_t4, q6_t5)
 
 
 questionList = {"04/09/2022" : q1}
