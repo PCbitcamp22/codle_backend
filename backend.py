@@ -48,10 +48,10 @@ class question():
     #    return outputList
 
     def getResultsWithInput(self, inputString: str):
-        outputList = [-2, -2, -2, -2, -2]
+        outputList = {1:-2, 2: -2, 3: -2, 4: -2, 5: -2}
         if "import " in inputString:
             print("PLEASE DO NOT ATTEMPT IMPORTS")
-            return [3, 3, 3, 3, 3]
+            return {1:-3, 2: -3, 3: -3, 4: -3, 5: -3}
 
         try:
             exec(inputString, globals())
@@ -59,7 +59,7 @@ class question():
         except:
             #catch exception
             print("failure during function definition")
-            outputList = [3, 3, 3, 3, 3]        #3's mean failed during function definition
+            outputList = {1:-3, 2: -3, 3: -3, 4: -3, 5: -3}       #3's mean failed during function definition
             return outputList
            
         
@@ -67,13 +67,13 @@ class question():
             try:
                 exec(inputString, globals())
                 if (self.correctOutput[i] == self.tests[i]()):
-                    outputList[i] = 1 #1 is correct case
+                    outputList[0 + i] = 1 #1 is correct case
                 else: 
-                    outputList[i] = 0 #0 is incorrect case
+                    outputList[0 +i] = 0 #0 is incorrect case
             except Exception as e:
                 #catch exception
                 print("fail")
-                outputList[i] = -1 #-1 means throws error
+                outputList[i + 1] = -1 #-1 means throws error
                 print(e)
                 
         return outputList
