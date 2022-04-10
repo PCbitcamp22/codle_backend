@@ -6,6 +6,7 @@ import json
 import os
 from flask_cors import CORS
 
+
 app = Flask(__name__)
 CORS(app)
 
@@ -43,6 +44,12 @@ def getResults():
     else:
         return(jsonify({"sfasf":"test"}))
     
+@app.route('/answer')
+def getCorrectAnswer():
+    date_time = date.today().strftime("%m/%d/%Y")
+    questionOfTheDay = backend.questionList[date_time]
+    questionSolutionToSend = questionOfTheDay.getSampleAnswer()
+    return jsonify(questionSolutionToSend)
 
 if __name__ == "__main__":
     app.debug=True
