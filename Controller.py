@@ -32,7 +32,6 @@ def getTodayProblem():
 # send them results
 @app.route('/api', methods=["POST"])
 def getResults():
-    print("aaaaaaaaa")
     if request.method == 'POST':
         #req = request.get_data(as_text=True)
         req = request.get_json()
@@ -41,7 +40,6 @@ def getResults():
         date_time = date.today().strftime("%m/%d/%Y")
         questionOfTheDay = backend.questionList[date_time]
         return jsonify(questionOfTheDay.getResultsWithInput(req["Code-Text"]))
-        # return req["thing"] 
     else:
         return(jsonify({"sfasf":"test"}))
     
